@@ -17,7 +17,7 @@
     "name": "IDBA",
     "ontology": ["http://sswapmeet.sswap.info/agave/apps/Application"],
     "parallelism": "SERIAL",
-    "shortDescription": ",
+    "shortDescription": "IDBA assembler",
     "tags": ["idba","assembler","assembly"],
     "templatePath": "stampede/idba-template.sh",
     "testPath": "stampede/test-idba.sh",
@@ -236,7 +236,6 @@
             "default": "no",
             "order": 10,
             "required": false,
-            "validator": "",
             "visible": true
         },
         "details": {
@@ -254,7 +253,6 @@
             "default": "no",
             "order": 10,
             "required": false,
-            "validator": "",
             "visible": true
         },
         "details": {
@@ -272,7 +270,6 @@
             "default": "no",
             "order": 10,
             "required": false,
-            "validator": "",
             "visible": true
         },
         "details": {
