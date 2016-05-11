@@ -1,0 +1,287 @@
+{
+    "available": true,
+    "checkpointable": false,
+    "defaultMemoryPerNode": 32,
+    "defaultProcessorsPerNode": 16,
+    "defaultMaxRunTime": "12:00:00",
+    "defaultNodeCount": 1,
+    "defaultQueue": "serial",
+    "deploymentPath": "kyclark/applications/idba-1.1.2",
+    "deploymentSystem": "data.iplantcollaborative.org",
+    "executionSystem": "tacc-stampede-kyclark",
+    "executionType": "HPC",
+    "helpURI": "http://i.cs.hku.hk/~alse/hkubrg/projects/idba/index.html",
+    "label": "IDBA",
+    "longDescription": "IDBA assembler",
+    "modules": [],
+    "name": "IDBA",
+    "ontology": ["http://sswapmeet.sswap.info/agave/apps/Application"],
+    "parallelism": "SERIAL",
+    "shortDescription": ",
+    "tags": ["idba","assembler","assembly"],
+    "templatePath": "stampede/idba-template.sh",
+    "testPath": "stampede/test-idba.sh",
+    "version": "1.1.2",
+    "inputs": [{
+        "id": "IN_DIR",
+        "value": {
+            "default": "",
+            "order": 0,
+            "required": true,
+            "validator": "",
+            "visible": true
+        },
+        "semantics": {
+            "ontology": ["http://sswapmeet.sswap.info/mime/application/X-bam"],
+            "minCardinality": 1,
+            "fileTypes": ["raw-0"]
+        },
+        "details": {
+            "description": "",
+            "label": "Directory of input files (FASTA/Q, SAM, ELAND, GERALD)",
+            "argument": "",
+            "showArgument": true
+        }
+    }],
+    "parameters": [{
+        "id": "MINK",
+        "value": {
+            "type": "string",
+            "default": "20",
+            "order": 1,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "minimum k value (<=124)",
+            "label": "Min K",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "MAXK",
+        "value": {
+            "type": "string",
+            "default": "50",
+            "order": 2,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "maximum k value (<=124)",
+            "label": "Max K",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "STEP",
+        "value": {
+            "type": "string",
+            "default": "10",
+            "order": 3,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "increment of k-mer of each iteration",
+            "label": "Step",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "PREFIX",
+        "value": {
+            "type": "string",
+            "default": "3",
+            "order": 4,
+            "required": false,
+            "visible": true
+        },
+        "details": {
+            "description": "prefix length used to build sub k-mer table",
+            "label": "Prefix",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "MIN_COUNT",
+        "value": {
+            "type": "string",
+            "default": "2",
+            "order": 5,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "minimum multiplicity for filtering k-mer when building the graph",
+            "label": "Min. count",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "MIN_SUPPORT",
+        "value": {
+            "type": "string",
+            "default": "1",
+            "order": 6,
+            "required": false,
+            "visible": true
+        },
+        "details": {
+            "description": "minimum support in each iteration",
+            "label": "Min. support",
+            "argument": "",
+            "showArgument": true
+        }
+    }, 
+    {
+        "id": "SEED_KMER",
+        "value": {
+            "type": "string",
+            "default": "30",
+            "order": 7,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "seed kmer size for alignment",
+            "label": "Seed Kmer",
+            "argument": "",
+            "showArgument": true
+        }
+    },
+    {
+        "id": "MIN_CONTIG",
+        "value": {
+            "type": "string",
+            "default": "200",
+            "order": 8,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "minimum size of contig",
+            "label": "Min. contig",
+            "argument": "",
+            "showArgument": true
+        }
+    },
+    {
+        "id": "SIMILAR",
+        "value": {
+            "type": "string",
+            "default": "0.95",
+            "order": 8,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "similarity for alignment",
+            "label": "Similarity",
+            "argument": "",
+            "showArgument": true
+        }
+    },
+    {
+        "id": "MAX_MISMATCH",
+        "value": {
+            "type": "string",
+            "default": "3",
+            "order": 9,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "max mismatch of error correction",
+            "label": "Max. mismatch",
+            "argument": "",
+            "showArgument": true
+        }
+    },
+    {
+        "id": "MIN_PAIRS",
+        "value": {
+            "type": "string",
+            "default": "3",
+            "order": 10,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "minimum number of pairs",
+            "label": "Min. pairs",
+            "argument": "",
+            "showArgument": true
+        }
+    },
+    {
+        "id": "NO_COVERAGE",
+        "value": {
+            "type": "enumeration",
+            "enumValues": ["no", "yes"],
+            "default": "no",
+            "order": 10,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "do not iterate on coverage",
+            "label": "No coverage",
+            "argument": "",
+            "showArgument": true
+        }
+    },
+    {
+        "id": "NO_CORRECT",
+        "value": {
+            "type": "enumeration",
+            "enumValues": ["no", "yes"],
+            "default": "no",
+            "order": 10,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "do not do correction",
+            "label": "No correction",
+            "argument": "",
+            "showArgument": true
+        }
+    },
+    {
+        "id": "PRE_CORRECTION",
+        "value": {
+            "type": "enumeration",
+            "enumValues": ["no", "yes"],
+            "default": "no",
+            "order": 10,
+            "required": false,
+            "validator": "",
+            "visible": true
+        },
+        "details": {
+            "description": "perform pre-correction before assembly",
+            "label": "Pre-correction",
+            "argument": "",
+            "showArgument": true
+        }
+    }
+    ],
+    "outputs": []
+}
